@@ -62,6 +62,18 @@ public class Neuron
         return Output = Sigmoid(sum);
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="weights"></param>
+    public void SetWeights(params double[] weights)
+    {
+        for (var i = 0; i < weights.Length; i++)
+        {
+            Weights![i] = weights[i]; 
+        }
+    }
+
     private static double Sigmoid(double value) => 1.0 / (1.0 + Math.Exp(-value));
 
 #if DEBUG
